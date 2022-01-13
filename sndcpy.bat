@@ -12,7 +12,7 @@ if not "%1"=="" (
 )
 
 %ADB% %serial% wait-for-device || goto :error
-%ADB% %serial% install -t -r -g %SNDCPY_APK% || (
+%ADB% %serial% install -t -r %SNDCPY_APK% || (
     echo Uninstalling existing version first...
     %ADB% %serial% uninstall com.rom1v.sndcpy || goto :error
     %ADB% %serial% install -t -g %SNDCPY_APK% || goto :error
